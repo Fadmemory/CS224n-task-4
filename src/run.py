@@ -150,7 +150,7 @@ elif args.function == 'finetune':
 
     ### YOUR CODE HERE ###
     text_ft = open(args.finetune_corpus_path, encoding='utf-8').read()
-    finetune_dataset = dataset.CharCorruptionDataset(text_ft, block_size)
+    finetune_dataset = dataset.NameDataset(text_ft, block_size)
 
     if args.reading_params_path is not None:
         model.load_state_dict(torch.load(args.reading_params_path))
